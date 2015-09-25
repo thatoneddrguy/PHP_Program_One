@@ -1,3 +1,14 @@
+<a href="index.html">Go back</a><br>
 <?php
-    echo "nothing here... yet."
+    session_start();
+    if(!isset($_SESSION["total"]))
+    {
+        $_SESSION["total"] = $_POST["cost"];
+    }
+    else
+    {
+        $_SESSION["total"] = $_SESSION["total"] + $_POST["cost"];
+    }
+    //echo $_SESSION["total"];
+    echo "Total: ".$_SESSION["total"];
 ?>
